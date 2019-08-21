@@ -16,6 +16,7 @@ if __name__ == "__main__":
     principal.resizable(False,False) #denegamos que el usuario pueda redimensionar la ventana
     principal.title("Formulario de Incidentes - CCTV ") #generamos un título
     index=Index(principal)
+    principal.config(menu=index.menu_principal)
 
     def salir():
         if messagebox.askokcancel("Salir de Aplicación","¿Está seguro que desea salir?"):
