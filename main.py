@@ -2,6 +2,8 @@ from tkinter import *
 from tkinter import messagebox 
 #importamos la vista principal
 from views.index import *
+#modo dev
+from views.login import *
 
 if __name__ == "__main__":
     principal=Tk()
@@ -15,9 +17,8 @@ if __name__ == "__main__":
     principal.geometry("%dx%d+%d+%d"%(w_p,h_p,p_x,p_y)) #dimensión y posicion del programa
     principal.resizable(False,False) #denegamos que el usuario pueda redimensionar la ventana
     principal.title("Formulario de Incidentes - CCTV ") #generamos un título
-    index=Index(principal)
-    principal.config(menu=index.menu_principal)
-
+    login=Login(principal) #mientras el login no sea resuelto el usuario no podrá ver las demás opciones
+    login.frame_principal.pack(fill=BOTH)
     def salir():
         if messagebox.askokcancel("Salir de Aplicación","¿Está seguro que desea salir?"):
             principal.quit()
